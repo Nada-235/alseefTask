@@ -1,0 +1,223 @@
+:root {
+    --cards: 4;
+    --cardHeight: 87vh;
+    --cardTopPadding: 1.5em;
+    --cardPadding: 20rem;
+    --cardMargin: 4vw;
+}
+
+#cards {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--cards), var(--cardHeight));
+    gap: var(--cardMargin);
+    padding-bottom: calc(var(--cards) * var(--cardTopPadding));
+    margin-bottom: var(--cardMargin);
+    background-color: #050505;
+}
+
+/* #card1 {
+    --index: 1;
+}
+
+#card2 {
+    --index: 2;
+}
+
+#card3 {
+    --index: 3;
+}
+
+#card4 {
+    --index: 4;
+} */
+
+.card {
+    padding: var(--cardPadding);
+    position: sticky;
+    top: 0;
+    padding-top: calc(var(--index) * var(--cardTopPadding));
+    cursor: pointer;
+}
+
+/* #card1 .card-body {
+background-position: 20%;}
+
+#card2 .card-body {
+            position: absolute;
+}
+
+#card3 .card-body {
+    background-color: #9CADCE;
+            position: absolute;
+}
+
+#card4 .card-body {
+    background-color: #D4AFB9;
+            position: absolute;
+} */
+
+.card-body {
+    box-sizing: border-box;
+    /* padding: 30px; */
+    border-radius: 3rem;
+    box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.3);
+    height: var(--cardHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+h1.title {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    
+}
+
+.category{
+text-transform: uppercase;
+font-size: 0.8rem;
+letter-spacing: 0.1rem;
+padding: 0.5rem 1rem;
+background-color: #050505;
+border-radius: 1rem;
+}
+
+.btnCard {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0.6rem;
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    border: none;
+    border-radius: 0px 20rem 0px 3rem;
+    transition: all 0.3s;
+    height: 4rem;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    padding-right: 3rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f5;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    font-family: 'Archivo', sans-serif;
+}
+
+.text {
+    order: 1;
+    position: relative;
+    overflow: hidden;
+    color: #1c1c1c;
+    border: none;
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.8rem;
+    width: 100%;
+    letter-spacing: 0.01rem;
+
+    &::after {
+        content: "VIEW DETAILS";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s, opacity 0.3s;
+        color: #f5f5f5;
+    }
+
+    &::before {
+        content: "VIEW DETAILS";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.5s, opacity 0.3s;
+        color: #c5fa66;
+    }
+}
+
+.arrow {
+    width: 1rem;
+    order: 2;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    color: #1c1c1c;
+    text-decoration: none;
+
+    &::after {
+        content: "»";
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        Right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s, opacity 0.3s;
+        color: #f5f5f5;
+        text-decoration: none;
+    }
+
+    &::before {
+        content: "»";
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        Right: 100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.5s, opacity 0.3s;
+        color: #f5f5f5;
+        text-decoration: none;
+    }
+}
+
+.btn:hover .text {
+    &::after {
+        opacity: 0;
+        transform: translateY(100%);
+        text-decoration: none;
+    }
+
+    &::before {
+        opacity: 1;
+        transform: translateY(100%);
+        text-decoration: none;
+    }
+}
+
+.btn:hover .arrow {
+    &::after {
+        opacity: 0;
+        transform: translateX(100%);
+        text-decoration: none;
+    }
+
+    &::before {
+        opacity: 1;
+        transform: translateX(100%);
+        text-decoration: none;
+    }
+}

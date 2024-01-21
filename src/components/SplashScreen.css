@@ -1,0 +1,86 @@
+.splash-screen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    background-color: rgb(89, 89, 89);
+}
+
+.splitUp {
+    width: 100%;
+    height: 50vh;
+    position: fixed;
+    top: 0;
+    background-color: #050505;
+    z-index: 1;
+    animation: splitUpAnimation 4s ease-out forwards;
+
+}
+
+@keyframes splitUpAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50vh);
+    }
+}
+
+.splitDown {
+    width: 100%;
+    height: 50vh;
+    position: fixed;
+    bottom: 0;
+    background-color: #050505;
+    z-index: 1;
+    animation: splitDownAnimation 4s ease-out forwards;
+}
+
+@keyframes splitDownAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(50vh);
+    }
+}
+
+.flipLogo {
+    position: fixed;
+    top: 50%;
+    bottom: 50%;
+    z-index: 100;
+    width: 10rem;
+    -webkit-animation: flip-vertical-right 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: flip-vertical-right 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+
+}
+
+@-webkit-keyframes flip-vertical-right {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+
+    100% {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+}
+
+@keyframes flip-vertical-right {
+    0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+
+    100% {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+}
